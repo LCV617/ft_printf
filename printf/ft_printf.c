@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:09:30 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/02 16:47:04 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/02 17:08:21 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,4 @@ int	ft_printf(const char *str, ...)
   }
   va_end(args);
   return (count);
-}
-
-
-int main()
-{
-  ft_printf("salut");
 }
