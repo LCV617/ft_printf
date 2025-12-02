@@ -6,13 +6,11 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:09:30 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/02 16:18:08 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/02 16:47:04 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libftprintf.h"
-#include <unistd.h>
-#include <stdarg.h>
+#include "libftprintf.h"
 
 int	ft_router(const char spec, va_list *args)
 {
@@ -20,21 +18,21 @@ int	ft_router(const char spec, va_list *args)
 
   count = 0;
   if (spec == 'c')
-	count += ft_printchar(va_list *args);
-  if (spec == 's')
-	count += ft_printchar(va_list *args);
-  if (spec == 'p')
-	count += ft_printchar(va_list *args);
-  if (spec == 'd')
-	count += ft_printchar(va_list *args);
-  if (spec == 'i')
-	count += ft_printchar(va_list *args);
-  if (spec == 'u')
-	count += ft_printchar(va_list *args);
-  if (spec == 'x')
-	count += ft_printchar(va_list *args);
-  if (spec == 'X')
-	count += ft_printchar(va_list *args);
+	count += ft_printf_char(args);
+	//  if (spec == 's')
+	// count += ft_printchar(args);
+	//  if (spec == 'p')
+	// count += ft_printchar(args);
+	//  if (spec == 'd')
+	// count += ft_printchar(args);
+	//  if (spec == 'i')
+	// count += ft_printchar(args);
+	//  if (spec == 'u')
+	// count += ft_printchar(args);
+	//  if (spec == 'x')
+	// count += ft_printchar(args);
+	//  if (spec == 'X')
+	// count += ft_printchar(args);
   return (count);
 }
 
@@ -60,7 +58,7 @@ int	ft_printf(const char *str, ...)
 	count++;
   }
   va_end(args);
-  return (count)
+  return (count);
 }
 
 
