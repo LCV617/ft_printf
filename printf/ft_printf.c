@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:09:30 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/03 15:10:26 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/03 16:31:06 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_router(const char spec, va_list *args)
 	count += ft_printf_char(args);
   if (spec == 's')
 	 count += ft_printf_string(args);
-  // if (spec == 'p')
-  // count += ft_printf_ptr(args);
+  if (spec == 'p')
+  count += ft_printf_ptr(args);
 	//  if (spec == 'd')
 	// count += ft_printchar(args);
   if (spec == 'i' || spec == 'd')
@@ -31,8 +31,13 @@ int	ft_router(const char spec, va_list *args)
 	 count += ft_printf_unsigned(args);
 	//  if (spec == 'x')
 	// count += ft_printchar(args);
-	//  if (spec == 'X')
-	// count += ft_printchar(args);
+  // if (spec == 'X')
+  // count += ft_printchar(args);
+  if (spec == '%')
+  {
+	write (1, "%", 1);
+	count++;
+  }
   return (count);
 }
 
@@ -47,7 +52,7 @@ int	ft_printf(const char *str, ...)
   count = 0;
   while (str[i])
   {
-	if (str[i] == '%' && str[i + 1] != '%')
+	if (str[i] == '%')
 	{
 	  count += ft_router(str[i + 1], &args);
 	  i += 2;
