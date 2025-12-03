@@ -9,6 +9,7 @@ SRCS    = \
     printf/ft_printf_int.c \
     printf/ft_printf_hexa_low.c \
     printf/ft_printf_hexa_up.c \
+	printf/ft_printf_unsigned.c \
     printf/utils/ft_putstr.c
 
 OBJS    = $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:09:30 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/03 14:10:10 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/03 15:10:26 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	ft_router(const char spec, va_list *args)
   // count += ft_printf_ptr(args);
 	//  if (spec == 'd')
 	// count += ft_printchar(args);
-  if (spec == 'i')
+  if (spec == 'i' || spec == 'd')
 	 count += ft_printf_int(args);
-	//  if (spec == 'u')
-	// count += ft_printchar(args);
+  if (spec == 'u')
+	 count += ft_printf_unsigned(args);
 	//  if (spec == 'x')
 	// count += ft_printchar(args);
 	//  if (spec == 'X')

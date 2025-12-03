@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/03 15:03:00 by ewaltz            #+#    #+#             */
+/*   Updated: 2025/12/03 15:18:55 by ewaltz           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	ft_int_len_unsigned(int nbr)
+{
+  int count;
+
+  count = 0;
+  if (nbr < 0)
+  {
+	count++;
+	nbr *= -1;
+  }
+  while (nbr > 0)
+  {
+	nbr /= 10;
+	count++;
+  }
+  return (count);
+}
+
+void	ft_putnbr_unsigned(int n)
+{
+  long	nbr;
+  char	c;
+
+  nbr = n;
+  c = 'x';
+  if (nbr < 0)
+  {
+	write(1, "-", 1);
+	nbr = nbr * -1;
+  }
+  if (nbr >= 10)
+  {
+	ft_putnbr_unsigned(nbr / 10);
+	ft_putnbr_unsigned(nbr % 10);
+  }
+  else
+  {
+	c = '0' + nbr;
+	write(1, &c, 1);
+  }
+}
+
+
+int	ft_printf_unsigned(va_list *args)
+{
+  int	nbr;
+
+  nbr = va_arg(*args, int);
+  ft_putnbr_unsigned(nbr);
+  return (ft_int_len_unsigned(nbr));
+}
