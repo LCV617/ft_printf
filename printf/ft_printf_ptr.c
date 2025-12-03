@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:52:30 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/03 18:15:52 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/03 18:20:21 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_printf_ptr(va_list *args)
 {
   void	*ptr;
   ptr = va_arg(*args, void*);
-  unsigned long addr = (unsigned long) ptr;
+  unsigned long addr = (unsigned long) &ptr;
 
 
   write (1, "0x", 2);
