@@ -5,12 +5,10 @@ SRCS    = \
     printf/ft_printf_char.c \
     printf/ft_printf_string.c \
     printf/ft_printf_ptr.c \
-    printf/ft_printf_decimal.c \
     printf/ft_printf_int.c \
     printf/ft_printf_hexa_low.c \
     printf/ft_printf_hexa_up.c \
-	printf/ft_printf_unsigned.c \
-    printf/utils/ft_putstr.c
+	printf/ft_printf_unsigned.c
 
 OBJS    = $(SRCS:.c=.o)
 

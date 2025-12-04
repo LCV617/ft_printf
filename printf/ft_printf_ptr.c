@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:52:30 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/04 10:24:39 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/04 13:05:39 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ int	ft_printf_ptr(va_list *args)
   unsigned long addr = (unsigned long) ptr;
 
 
+  if (ptr == 0)
+  {
+	write(1, "(nil)", 5);
+	return (5);
+  }
   count += write (1, "0x", 2);
   count += ft_putnbr_base(addr);
 

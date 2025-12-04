@@ -6,17 +6,19 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:52:29 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/03 14:13:42 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/04 13:18:44 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_int_len(int nbr)
+long	ft_int_len(long nbr)
 {
-  int count;
+  long	count;
 
   count = 0;
+  if (nbr == 0)
+	return (1);
   if (nbr < 0)
   {
 	count++;
