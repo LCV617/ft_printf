@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:56:57 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/04 13:34:50 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/05 10:58:58 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,16 @@ int	main(void)
   // printf(" %p %p ", s, s);
 
 
-  printf("%d\n", printf(" %d ", INT_MIN));
-  printf("%d\n",ft_printf(" %d ", INT_MIN));
+  // printf("%d\n", printf(" %d ", INT_MIN));
+  // printf("%d\n",ft_printf(" %d ", INT_MIN));
 
 
   // printf("%u\n", printf(" %u ", 0));
   // printf("%u\n",ft_printf(" %u ", 0));
 
-  printf(" %u ", 0));
-  ft_printf(" %u ", 0));
+  printf("%i", printf(" %u ", 0));
+  printf("\n");
+  printf("%i", ft_printf(" %u ", 0));
 	// int count1;
 	// int count2;
 	//

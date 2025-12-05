@@ -6,7 +6,7 @@
 /*   By: ewaltz <ewaltz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 15:03:00 by ewaltz            #+#    #+#             */
-/*   Updated: 2025/12/03 15:32:27 by ewaltz           ###   ########.fr       */
+/*   Updated: 2025/12/05 11:05:53 by ewaltz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ int	ft_printf_unsigned(va_list *args)
   unsigned int	nbr;
 
   nbr = va_arg(*args, int);
-  ft_putnbr_unsigned(nbr);
-  return (ft_int_len_unsigned(nbr));
+  if (nbr == 0)
+  {
+	write (1, "0", 1);
+	return (1);
+  }
+  else
+  {
+	ft_putnbr_unsigned(nbr);
+	return (ft_int_len_unsigned(nbr));
+  }
 }
