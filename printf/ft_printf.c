@@ -49,7 +49,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	count = 0;
 	if (!str)
-	  return (-1);
+		return (-1);
 	while (str[i])
 	{
 		if (str[i] == '%')
